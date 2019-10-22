@@ -14,4 +14,4 @@ services:
       - /usr/src/app/node_modules
 secrets:
   SECRET_KEY:
-    file: ./mysecret.txt
+    external: true
