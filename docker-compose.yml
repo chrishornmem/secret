@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+
+  secret:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    command: bash -c "npm run start"
+    secrets:
+      - SECRET_KEY
+    volumes:
+      - ./src:/usr/src/app/src
+      - /usr/src/app/node_modules
+secrets:
+  SECRET_KEY:
+    file: ./mysecret.txt
